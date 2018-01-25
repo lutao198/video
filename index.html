@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="renderer" content="webkit">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta name="keywords" content="关键词1,关键词2">
+		<meta name="description" content="描述语句">
+		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/favicon.png">
+		<title>盖世英雄--心动网络</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	</head>
+
+	<body>
+		<div class="section1">
+			<div class="containerBg">
+				<div class="cont">
+					<img src="images/logo.png" / class="logo">
+					<div class="videoBox">
+						<a href="javascript:void(0)">
+							<img src="images/videoBg.png" />
+						</a>
+					</div>
+					<div class="downloadBox">
+						<img src="images/qrcode.png" alt="" / class="qrcode">
+						<a href="https://www.taptap.com/app/68031" class="download-btn download-ios"></a>
+						<a href="https://www.taptap.com/app/68031" class="download-btn download-android"></a>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="mediaplayerBox">
+			<div id="mediaplayer">
+
+			</div>
+		</div>
+		<div class="mediaplayerBg">
+
+		</div>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="js/jwplayer.js"></script>
+		<script src="js/jwpsrv.js"></script>
+		<script type="text/javascript">
+			var video = 'http://lutao198.gitee.io/video/media/gsyx.mov';
+			jwplayer('mediaplayer').setup({
+				'flashplayer': 'jwplayer/jwplayer.flash.swf',
+				'image': '',
+				'id': 'playerID',
+				'width': '100%',
+				'aspectratio': '10:6',
+				'file': video
+			});
+			$(function() {
+				$('.videoBox').on('click', function() {
+
+					jwplayer('mediaplayer').play();
+					$('.mediaplayerBg').show();
+					$('.mediaplayerBox').show();
+				})
+				$('.mediaplayerBg').on('click', function() {
+					console.log(0);
+
+					jwplayer(0).stop();
+					$(this).hide();
+					$('.mediaplayerBox').hide();
+
+				})
+			})
+		</script>
+
+	</body>
+
+</html>
